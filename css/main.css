@@ -11,6 +11,7 @@
 
   --font-safiro: "safiromedium";
   --font-open-sans: "Open Sans", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
 }
 
 a {
@@ -19,7 +20,13 @@ a {
 }
 
 body {
-  font-family: var(--font-open-sans);
+  font-family: var(--font-raleway);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #hero {
@@ -115,6 +122,26 @@ body {
 .projetos-item {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
+  border-bottom: 1px solid #aaa;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.projetos-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(90deg, #32d583 0%, #0e4429 100%);
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
+}
+
+.projetos-item:hover::after {
+  width: 100%;
 }
 
 @media screen and (min-width: 640px) {
