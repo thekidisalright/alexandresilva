@@ -13,51 +13,84 @@
 
 <body>
   <header class="header" id="header-menu-principal">
-    <div class="header__container">
-      <div class="header__container_logo">
+    <div class="header__bar container">
+      <div class="header__logo">
         <a href="/">Alexandre Silva</a>
       </div>
-      <div class="header__container_menu">
-        <button class="header__container_menu_button" type="button" aria-expanded="false" aria-controls="header-menu-principal">Menu</button>
-      </div>
+      <button class="header__button" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="header__button-text">Menu</span>
+      </button>
     </div>
-    <nav class="main-navigation" aria-label="Navegação Principal">
-      <ul class="main-navigation-list">
-        <li class="main-navigation-item">
-          <a href="/projetos">
-            <span>1</span>
-            <span>Projetos</span>
-          </a>
-        </li>
-        <li class="main-navigation-item">
-          <a href="/projetos">
-            <span>2</span>
-            <span>Sobre mim</span>
-          </a>
-        </li>
-        <li class="main-navigation-item">
-          <a href="/projetos">
-            <span>3</span>
-            <span>Contato</span>
-          </a>
-        </li>
-      </ul>
+
+    <nav id="main-nav" class="main-navigation" aria-label="Navegação Principal">
+      <div class="container">
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item">
+            <a href="#works" class="main-navigation__link">
+              <span class="main-navigation__number">01</span>
+              <span class="main-navigation__text">Trabalhos</span>
+            </a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="/sobre" class="main-navigation__link">
+              <span class="main-navigation__number">02</span>
+              <span class="main-navigation__text">Sobre Mim</span>
+            </a>
+          </li>
+          <li class="main-navigation__item">
+            <a href="/contato" class="main-navigation__link">
+              <span class="main-navigation__number">03</span>
+              <span class="main-navigation__text">Contato</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
-  <main class="main__container">
-    <div class="main__hero">
-      <h1 class="main__hero_title">Designer e <span>Desenvolvedor</span> de Sistemas Web</h1>
-      <p class="main__hero_subtitle">
-        Construção de interfaces bonitas e de alta performance. Meu objetivo é ir além do código, arquitetando cada interação para encantar o usuário final.
-      </p>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="main__hero_svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-      </svg>
-
-    </div>
+  <main class="site-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__content">
+        <h1 id="hero-title" class="hero__title">Designer e <span class="hero__title-highlight">Desenvolvedor</span> de Sistemas Web</h1>
+        <p class="hero__text">
+          Compreendo programação como arte, por isso construo projetos que me permitam exercer minha criatividade e tragam novos aprendizados, sempre evoluindo e crescendo.
+        </p>
+      </div>
+    </section>
+    <section class="featured-image">
+      <div class="container">
+        <figure class="artwork">
+          <div class="reveal-container">
+            <img src="assets/imgs/parasol.jpg" alt="Pintura impressionista de Claude Monet retratando uma mulher em pé com um guarda-chuva verde, em um campo de grama alta e flores amarelas sob um céu azul claro com nuvens brancas e esparsas." class="img-base">
+            <img src="assets/imgs/parasol.jpg" alt="" class="img-reveal" aria-hidden="true">
+          </div>
+          <figcaption class="artwork__info">
+            <strong class="artwork__title">Woman with a Parasol - Madame Monet and Her Son</strong>
+            <span class="artwork__meta">Claude Monet, 1875</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="works" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <div class="works__grid">
+          <div class="works__intro">
+            <h2 id="works-title" class="works__title">Trabalhos selecionados</h2>
+            <p class="works__description">Uma coleção dos meus trabalhos favoritos...</p>
+          </div>
+          <div class="works__gallery">
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+            <div class="project-card"></div>
+          </div>
+          <div class="works__action">
+            <a href="/works">Ver todos</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-</body>
 
-<script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js" defer></script>
+</body>
 
 </html>
